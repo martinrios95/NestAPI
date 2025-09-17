@@ -1,0 +1,14 @@
+version: '2'
+services:
+  nestjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+    container_name: nestjs
+    expose:
+      - '3000'
+    ports:
+      - '3000:3000'
+    command: npm run start:dev
